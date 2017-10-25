@@ -20,11 +20,19 @@
 
 <?php
 
-$user = 'root';
+//Details for connecting to freesqldatabase
+$user = 'sql2201287';
+$password = 'qC2!tI5*';
+$db = 'sql2201287';
+$host = 'sql2.freesqldatabase.com';
+$port = 3306;
+
+//Details for connecting to MAMP
+/*$user = 'root';
 $password = 'root';
 $db = 'sakila';
 $host = 'localhost';
-$port = 8889;
+$port = 8889;*/
 
 $link = mysqli_init();
 $conn = mysqli_real_connect(
@@ -40,24 +48,17 @@ if (!$conn) {
     echo "Connection failed ";
         die(mysqli_error());
           }
-//echo "ONE ";
 
 $sql = "SELECT first_name FROM actor";
 $result = mysqli_query($conn, $sql);
-//$result = "RESULTS";
-
-
-echo "TWO ";
 
 if ($result === null){
   //echo "has results";
-  echo "IF ";
+  echo "NULL ";
 }
 else {
-  echo "ELSE ";
+  echo "HAS STUFF ";
 }
-
-//echo $result;
 
 /*if (mysqli_num_rows($result) > 0) {
     // output data of each row
@@ -65,8 +66,6 @@ else {
 } else {
     echo "0 results ";
 }*/
-
-echo "THREE ";
 
  ?>
 
