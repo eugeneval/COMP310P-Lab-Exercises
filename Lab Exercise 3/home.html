@@ -35,10 +35,21 @@
     suavitate an. Mel amet audire instructior ad.
   </p>
   <h2>Get in touch</h2>
-  <input type="email" placeholder="Your Email"/>
-  <input type="submit" />
+  <input type="email" placeholder="Your Email" id="email"/>
+  <input type="submit" onclick="submitEmail(emailSubmitted)" />
+  <p>
+      <div id="emailSubmitted">
 
+      </div>
+  </p>
   <script>
+  email = getElementById("email")
+
+    function submitEmail(id){
+        id.innerHTML = "Thank you, " + email.value + "! You have been added to our mailing list.";
+        ;
+    }
+
 
   </script>
 </body>
