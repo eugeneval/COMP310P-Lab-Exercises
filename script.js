@@ -6,6 +6,7 @@ function submitEmail(){
     var input = document.getElementById("email");
     var text = "Thank you, " + input.value + "! You have been added to our mailing list.";
     document.getElementById("emailSubmitted").innerHTML = text;
+    input.value = "";
 
     return false; //required so that page is not refreshed
 }
