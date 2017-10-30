@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<head>
+  <link href="styling.css" rel="stylesheet">
+  <title>Rob's Rentals - Rentals</title>
+</head>
+
+<body>
+  <header>
+    <h1>Rob's Rentals</h1>
+    <img src="the-movies.jpg" width="126" height="84">
+    <h2>The place for all of your DVD needs!</h2>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="rentals.html">Rentals</a></li>
+      <li><a href="returns.html">Returns</a></li>
+    </ul>
+  </header>
+  <h2>Available Rentals</h2>
+
+  <table>
+  <tr>
+    <th>Categories</th>
+    <th>Number Available</th>
+  </tr>
+  <tr>
+    <td>Action</td>
+    <td>64</td>
+  </tr>
+  <tr>
+    <td>Animation</td>
+    <td>66</td>
+  </tr>
+  <tr>
+    <td>Children</td>
+    <td>60</td>
+  </tr>
+  <tr>
+    <td>Classics</td>
+    <td>57</td>
+  </tr>
+  <tr>
+    <td>Comedy</td>
+    <td>58</td>
+  </tr>
+  <tr>
+    <td>Documentary</td>
+    <td>68</td>
+  </tr>
+  <tr>
+    <td>Drama</td>
+    <td>62</td>
+  </tr>
+  <tr>
+    <td>Family</td>
+    <td>69</td>
+  </tr>
+  <tr>
+    <td>Foreign</td>
+    <td>73</td>
+  </tr>
+  <tr>
+    <td>Games</td>
+    <td>61</td>
+  </tr>
+  <tr>
+    <td>Horror</td>
+    <td>56</td>
+  </tr>
+  <tr>
+    <td>Music</td>
+    <td>51</td>
+  </tr>
+  <tr>
+    <td>New</td>
+    <td>63</td>
+  </tr>
+  <tr>
+    <td>Sci-Fi</td>
+    <td>61</td>
+  </tr>
+  <tr>
+    <td>Sports</td>
+    <td>74</td>
+  </tr>
+  <tr>
+    <td>Travel</td>
+    <td>57</td>
+  </tr>
+</table>
+
+<form>
+    <h3>Select genres or search for a specific DVD: </h3>
+    <!-- Note: there are 16 categories -->
+    <input type="checkbox" name="Category" value="Action" id="Action"/><label> Action</label>
+    <input type="checkbox" name="Category" value="Animation" id="Animation"/><label> Animation</label>
+    <input type="checkbox" name="Category" value="Children" id="Children"/><label> Children</label>
+    <input type="checkbox" name="Category" value="Classics" id="Classics"/><label> Classics</label>
+    <input type="checkbox" name="Category" value="Comedy" id="Comedy"/><label> Comedy</label>
+    <input type="checkbox" name="Category" value="Documentary" id="Documetary"/><label> Documentary</label>
+    <input type="checkbox" name="Category" value="Drama" id="Drama"/><label> Drama</label>
+    <input type="checkbox" name="Category" value="Family" id="Family"/><label> Family</label>
+    <input type="checkbox" name="Category" value="Foreign" id="Foreign"/><label> Foreign</label>
+    <input type="checkbox" name="Category" value="Games" id="Games"/><label> Games</label>
+    <input type="checkbox" name="Category" value="Horror" id="Horror"/><label> Horror</label>
+    <input type="checkbox" name="Category" value="Music" id="Music"/><label> Music</label>
+    <input type="checkbox" name="Category" value="New" id="News"/><label> New</label>
+    <input type="checkbox" name="Category" value="Sci-Fi" id="Sci-Fi"/><label> Sci-Fi</label>
+    <input type="checkbox" name="Category" value="Sports" id="Sports"/><label> Sports</label>
+    <input type="checkbox" name="Category" value="Travel" id="Travel"/><label> Travel</label>
+    <br /><br />
+    <input type="text" name="Name" placeholder="Film name " id="textInput"/>
+    <input type="submit" onclick="submitRentals()"/>
+</form>
+
+  <script src="script.js"></script>
+
+</body>

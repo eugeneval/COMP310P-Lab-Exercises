@@ -9,7 +9,6 @@
   <header>
     <h1>Rob's Rentals</h1>
     <img src="the-movies.jpg" width="126" height="84">
-
     <h2>The place for all of your DVD needs!</h2>
     <div class="header_list">
       <ul>
@@ -29,18 +28,22 @@
       <li>Music</li>
     </ul>
   </div>
-
   <h2>About us</h2>
   <p>
     Lorem ipsum dolor sit amet, et case nobis senserit sea, vel an aperiam
     fabulas definitiones. Altera iriure mediocritatem eam ad. Vis novum
     suavitate an. Mel amet audire instructior ad.
   </p>
-  <h2>Get in touch</h2>
-  <input type="email" placeholder="Your Email"/>
-  <input type="submit" />
+  <form onsubmit="return submitEmail()">
+      <h2>Get in touch</h2>
+      <input type="email" placeholder="Your Email" id="email" maxlength="50"/>
+      <input type="submit" />
+      <p>
+          <div id="emailSubmitted">
 
-  <script>
+          </div>
+      </p>
+  </form>
 
-  </script>
+  <script src="script.js"></script>
 </body>

@@ -2,7 +2,7 @@
 
 <head>
   <link href="styling.css" rel="stylesheet">
-  <title>Rob's Rentals – Returns</title>
+  <title>Rob's Rentals - Returns</title>
 </head>
 
 <body>
@@ -17,8 +17,16 @@
     </ul>
   </header>
   <h2>Returns</h2>
+  <form onsubmit="return submitReturn()">
+      <input type="email" placeholder="Your Email" />
+      <input type="text" placeholder="DVD Title" />
+      <input type="date" placeholder="Return Date" id="returnDate"/>
+      <input type="submit" />
+  </form>
+  <p>
+      <div class="returnSubmitted" id="returnSubmitted">
 
-  <script>
-
-  </script>
+      </div>
+  </p>
+  <script src="script.js"></script>
 </body>
