@@ -46,7 +46,7 @@
               if (mysqli_num_rows($result) > 0) {
                   // output data of each row
                   while($row = mysqli_fetch_assoc($result)) {
-                      echo "<tr><td>".$row['Categories']."</td><td>".$row['Categories']."</td></tr>";
+                      echo "<tr><td>".$row['Categories']."</td><td>".$row['Number Available']."</td></tr>";
                   }
               } else {
                   echo "0 results";
@@ -56,7 +56,31 @@
               ?>
           </tbody>
       </tr>
-
   </table>
+  <form>
+      <h3>Select genres or search for a specific DVD: </h3>
+      <!-- Note: there are 16 categories -->
+      <input type="checkbox" name="Category" value="Action" id="Action"/><label> Action</label>
+      <input type="checkbox" name="Category" value="Animation" id="Animation"/><label> Animation</label>
+      <input type="checkbox" name="Category" value="Children" id="Children"/><label> Children</label>
+      <input type="checkbox" name="Category" value="Classics" id="Classics"/><label> Classics</label>
+      <input type="checkbox" name="Category" value="Comedy" id="Comedy"/><label> Comedy</label>
+      <input type="checkbox" name="Category" value="Documentary" id="Documetary"/><label> Documentary</label>
+      <input type="checkbox" name="Category" value="Drama" id="Drama"/><label> Drama</label>
+      <input type="checkbox" name="Category" value="Family" id="Family"/><label> Family</label>
+      <input type="checkbox" name="Category" value="Foreign" id="Foreign"/><label> Foreign</label>
+      <input type="checkbox" name="Category" value="Games" id="Games"/><label> Games</label>
+      <input type="checkbox" name="Category" value="Horror" id="Horror"/><label> Horror</label>
+      <input type="checkbox" name="Category" value="Music" id="Music"/><label> Music</label>
+      <input type="checkbox" name="Category" value="New" id="News"/><label> New</label>
+      <input type="checkbox" name="Category" value="Sci-Fi" id="Sci-Fi"/><label> Sci-Fi</label>
+      <input type="checkbox" name="Category" value="Sports" id="Sports"/><label> Sports</label>
+      <input type="checkbox" name="Category" value="Travel" id="Travel"/><label> Travel</label>
+      <br /><br />
+      <input type="text" name="Name" placeholder="Film name " id="textInput"/>
+      <input type="submit" onclick="submitRentals()"/>
+  </form>
+
+    <script src="script.js"></script>
 
 </body>
