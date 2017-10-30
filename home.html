@@ -34,10 +34,10 @@
     fabulas definitiones. Altera iriure mediocritatem eam ad. Vis novum
     suavitate an. Mel amet audire instructior ad.
   </p>
-  <form>
+  <form onsubmit="return submitEmail()">
       <h2>Get in touch</h2>
       <input type="email" placeholder="Your Email" id="email" maxlength="50"/>
-      <input type="submit" onclick="submitEmail(emailSubmitted)" />
+      <input type="submit"  />
       <p>
           <div id="emailSubmitted">
 
@@ -45,14 +45,5 @@
       </p>
   </form>
 
-  <script>
-  email = getElementById("email")
-
-    function submitEmail(id){
-        id.innerHTML = "Thank you, " + email.value + "! You have been added to our mailing list.";
-        ;
-    }
-
-
-  </script>
+  <script src="script.js"></script>
 </body>

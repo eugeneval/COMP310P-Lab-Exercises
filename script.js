@@ -1,4 +1,15 @@
-function submit(){
+//Displays message thanking user for joining mailing list
+//Note: currently no backend to support a mailing list
+function submitEmail(){
+    var input = document.getElementById("email");
+    var text = "Thank you, " + input.value + "! You have been added to our mailing list.";
+    document.getElementById("emailSubmitted").innerHTML = text;
+
+    return false; //required so that page is not refreshed
+}
+
+//Creates an alert box showing what the user searched for.
+function submitRentals() {
 
     var alertString = "You searched for: ";
 
@@ -54,6 +65,6 @@ function submit(){
         alertString += ("and " + document.getElementById('textInput').value);
     }
 
-
     alert(alertString);
+
 }
