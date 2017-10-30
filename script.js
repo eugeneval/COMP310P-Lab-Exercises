@@ -1,3 +1,5 @@
+
+
 //Displays message thanking user for joining mailing list
 //Note: currently no backend to support a mailing list
 function submitEmail(){
