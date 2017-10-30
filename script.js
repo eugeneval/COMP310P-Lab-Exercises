@@ -70,3 +70,22 @@ function submitRentals() {
     alert(alertString);
 
 }
+
+function submitReturn() {
+    var returnSubmitted;
+    if (validateDate(document.getElementById('returnDate'))) {
+        returnSubmitted = "Thank you!";
+    } else {
+        returnSubmitted = "Please a valid date in the format dd/mm/yyyy";
+    }
+    document.getElementById('returnSubmitted').innerHTML = returnSubmitted;
+    return false;
+}
+
+function validateDate(date) {
+    if (date.value.match(/^\d{1,2}\/\d{1,2}\/\d{4}$/)) {
+        return true;
+    } else {
+        return false;
+    }
+}
