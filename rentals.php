@@ -21,18 +21,19 @@
 <?php
 
 //Details for connecting to freesqldatabase
-$user = 'sql2201287';
+//Note this database has now been deleted
+/*$user = 'sql2201287';
 $password = 'qC2!tI5*';
 $db = 'sql2201287';
 $host = 'sql2.freesqldatabase.com';
-$port = 3306;
+$port = 3306;*/
 
 //Details for connecting to MAMP
-/*$user = 'root';
+$user = 'root';
 $password = 'root';
 $db = 'sakila';
 $host = 'localhost';
-$port = 8889;*/
+$port = 8889;
 
 $link = mysqli_init();
 $conn = mysqli_real_connect(
