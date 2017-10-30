@@ -49,24 +49,25 @@ if (!$conn) {
     echo "Connection failed ";
         die(mysqli_error());
           }
+          else { echo "Connection succesful "; }
 
-$sql = "SELECT first_name FROM actor";
-$result = mysqli_query($conn, $sql);
+//$sql = "SELECT first_name FROM actor";
+$result = mysqli_query($conn, "SELECT first_name FROM actor");
 
-if ($result === null){
+/*if ($result === null){
   //echo "has results";
   echo "NULL ";
 }
 else {
   echo "HAS STUFF ";
-}
+}*/
 
-/*if (mysqli_num_rows($result) > 0) {
+if (mysqli_num_rows($result) > 0) {
     // output data of each row
     echo "has results ";
 } else {
     echo "0 results ";
-}*/
+}
 
  ?>
 
