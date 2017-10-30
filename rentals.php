@@ -17,61 +17,46 @@
     </ul>
   </header>
   <h2>Available Rentals</h2>
+  <table>
+      <tr>
+          <thead>
+              <th>Category</th>
+              <th>Number Available</th>
+          </thead>
+          <tbody>
+              <?php
+              $servername = "localhost";
+              $username = "root";
+              $password = "root";
+              $dbname = "sakila";
 
-<?php
+              // Create connection
+              $conn = mysqli_connect($servername, $username, $password, $dbname);
+              // Check connection
+              if (!$conn) {
+                  die("Connection failed: " . mysqli_connect_error());
+              }
 
-//Details for connecting to freesqldatabase
-//Note this database has now been deleted
-/*$user = 'sql2201287';
-$password = 'qC2!tI5*';
-$db = 'sql2201287';
-$host = 'sql2.freesqldatabase.com';
-$port = 3306;*/
+              $sql = "SELECT c.name AS 'Categories', COUNT(fc.film_ID) AS 'Number Available'
+              FROM category c
+              JOIN film_category fc ON fc.category_ID = c.category_ID
+              GROUP BY c.name;";
+              $result = mysqli_query($conn, $sql);
 
-//Details for connecting to MAMP
-$user = 'root';
-$password = 'root';
-$db = 'sakila';
-$host = 'localhost';
-$port = 8889;
+              if (mysqli_num_rows($result) > 0) {
+                  // output data of each row
+                  while($row = mysqli_fetch_assoc($result)) {
+                      echo "<tr><td>".$row['Categories']."</td><td>".$row['Categories']."</td></tr>";
+                  }
+              } else {
+                  echo "0 results";
+              }
 
-$link = mysqli_init();
-$conn = mysqli_real_connect(
- $link,
- $host,
- $user,
- $password,
- $db,
- $port
-);
+              mysqli_close($conn);
+              ?>
+          </tbody>
+      </tr>
 
-if (!$conn) {
-    echo "Connection failed ";
-        die(mysqli_error());
-          }
-          else { echo "Connection succesful "; }
-
-//$sql = "SELECT first_name FROM actor";
-$result = mysqli_query($conn, "SELECT first_name FROM actor");
-
-/*if ($result === null){
-  //echo "has results";
-  echo "NULL ";
-}
-else {
-  echo "HAS STUFF ";
-}*/
-
-if (mysqli_num_rows($result) > 0) {
-    // output data of each row
-    echo "has results ";
-} else {
-    echo "0 results ";
-}
-
- ?>
-
-
-
+  </table>
 
 </body>
