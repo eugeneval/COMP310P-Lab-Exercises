@@ -26,3 +26,10 @@ li {
 a {
   color: white;
 }
+
+table {
+  text-align: center;
+  margin: 0 auto;
+  background: #888;
+}
+
