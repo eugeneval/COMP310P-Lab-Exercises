@@ -1,3 +1,41 @@
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $email = test_input($_POST["email"]);
+
+    $dbservername = "localhost";
+    $dbusername = "root";
+    $dbpassword = "root";
+    $dbname = "sakila";
+
+    $conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT first_name, last_name FROM customer WHERE email = '$email'";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    if (mysqli_num_rows($result) == 0) {
+        $loginString = "No mathcing user!";
+    }
+    else {
+        $loginString = "Welcome, ".$row['first_name']." ".$row['last_name']."!";
+    }
+
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+ ?>
+
 <!DOCTYPE html>
 
 <head>
@@ -34,13 +72,13 @@
     fabulas definitiones. Altera iriure mediocritatem eam ad. Vis novum
     suavitate an. Mel amet audire instructior ad.
   </p>
-  <form onsubmit="return submitEmail()">
+  <form method="post" action="home.php">
       <h2>Get in touch</h2>
-      <input type="email" placeholder="Your Email" id="email" maxlength="50"/>
+      <input type="email" placeholder="Your Email" id="email" maxlength="50" name="email"/>
       <input type="submit" />
       <p>
           <div id="emailSubmitted">
-
+              <?php echo $loginString; ?>
           </div>
       </p>
   </form>
